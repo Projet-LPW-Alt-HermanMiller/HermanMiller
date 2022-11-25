@@ -1,19 +1,17 @@
-$nav-background: white;
-$nav-link-background: white;
-$nav-link-color: black;
-$nav-link-hover-color: red;
-
 .nav {
-    &__logo {
-        img {
-            max-width: 50px;
-            display: inline-block;
-          }
-    }  
+  background: $white;
+  &__logo {
+    img {
+      max-width: 50px;
+      display: inline-block;
+    }
+  }  
   &__list {
     display: flex;
     justify-content: space-evenly;
-    padding: 0;
+    align-items: center;
+    padding: 10px;
+    margin: 0px;
   }
   &__item {
     list-style: none;
@@ -21,10 +19,9 @@ $nav-link-hover-color: red;
       padding: 10px;
       display: inline-block;
       text-decoration: none;
-      background: $nav-link-background;
-      color: $nav-link-color;
+      color: $black;
       &:hover {
-        color: $nav-link-hover-color;
+        color: $HMColor;
       }
     }
   }
