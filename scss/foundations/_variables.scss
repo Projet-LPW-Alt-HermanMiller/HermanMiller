@@ -1,5 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@use "sass:math";
+@function rem($px) {
+    @return math.div($px, 16) + rem;
+}
 
-$main-color: white;
-$background: black;
+$background : #e8e8e8;
+$backgroundSecondary : #ECECEC;
+$backgroundFooterLight : #DDDAE1;
+$backgroundFooterDark : #CAC6CE;
+
+$white : #FAFAFA;
+$black : #070707;
+ 
+$HMColor : #E22D00;
+$HMColorSecondary : #FA7351;
+
 $text-font-family: 'Poppins';
+$titleNavBar-font-size: rem(18);
+$base-font-size: 16px;
