@@ -1,18 +1,21 @@
 .nav {
+  padding: 10px;
+  margin: 0px;
   background: $white;
+  &__flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
   &__logo {
+    justify-content: center;
+    margin-left: 30px;
     img {
       max-width: 50px;
       display: inline-block;
+ 
     }
   }  
-  &__list {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    padding: 10px;
-    margin: 0px;
-  }
   &__item {
     list-style: none;
     a {
@@ -25,4 +28,17 @@
       }
     }
   }
+  &__right{
+    width:10%;
+    justify-self : end;
+    justify-content: space-around;
+  }
+  &__middle{
+    width: 50%;
+    justify-content: center;
+    .nav__icon {
+      padding-left: 20px;
+    }
+  }
+  
 }
