@@ -1,3 +1,8 @@
+@use "sass:math";
+@function rem($px) {
+    @return math.div($px, 16) + rem;
+}
+
 $background : #e8e8e8;
 $backgroundSecondary : #ECECEC;
 $backgroundFooterLight : #DDDAE1;
@@ -10,3 +15,5 @@ $HMColor : #E22D00;
 $HMColorSecondary : #FA7351;
 
 $text-font-family: 'Poppins';
+$titleNavBar-font-size: rem(18);
+$base-font-size: 16px;

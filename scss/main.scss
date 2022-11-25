@@ -13,3 +13,12 @@
 
 //layouts
  
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin : 0px;
+    font-family: $text-font-family;
+    font-size: $base-font-size;
+}
