@@ -2,12 +2,14 @@
 import NavBarHM from "../components/NavBarHM.vue";
 import FooterHM from "../components/FooterHM.vue";
 import ButtonHM from "../components/ButtonHM.vue";
+import FormLogInHM from "../components/FormLogInHM.vue";
 
 export default {
   components: {
     NavBarHM,
     FooterHM,
     ButtonHM,
+    FormLogInHM,
   },
 };
 </script>
@@ -18,13 +20,12 @@ export default {
     <h1>Caviar</h1>
     <h2>Rasputin</h2>
     <h3>Poppins</h3>
-    <ButtonHM
-    text="Bouton"
-    link="#" />
-    <ButtonHM
-    class="-Secondary"
-    text="Bouton"
-    link="#" />
+    <div>
+      dgeg "ger grgrg  et"g regrgzgzgz thtehzrg ztttezf tzetz
+    </div>
+    <ButtonHM>TEST 1</ButtonHM>
+    <ButtonHM class="-Secondary">TEST 2343536454363</ButtonHM>
+    <FormLogInHM />
     <FooterHM></FooterHM>
   </main>
 </template>
