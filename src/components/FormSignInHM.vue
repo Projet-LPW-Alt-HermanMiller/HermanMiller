@@ -29,7 +29,7 @@ export default {
 
 <template>
   <div class="formLogIn">
-    <div class="fontH1">Connexion</div>
+    <div class="fontH1">Inscription</div>
 
     <form @submit.prevent="handleSubmit">
       <div>
@@ -40,6 +40,22 @@ export default {
           placeholder="Adresse e-mail"
         />
       </div>
+      <div class="formLogIn__Identity">
+        <input
+          class="formLogIn__Identity__Input"
+          v-model="email"
+          name="email" 
+          type="text" 
+          placeholder="Adresse e-mail"
+        />
+        <input
+          class="formLogIn__Identity__Input"
+          v-model="password"
+          name="password"
+          :type="showPassword ? 'text' : 'password'"
+          placeholder="Mot de passe"
+        />
+      </div>
       <div>
         <input
           v-model="password"
@@ -47,18 +63,27 @@ export default {
           :type="showPassword ? 'text' : 'password'"
           placeholder="Mot de passe"
         />
-        <!-- Afficher ou masquer le mot de passe dans l'input -> à ajouter si besoin -->
-        <!-- <p @click="handlePasswordClick">
-          {{ showPassword ? "Masquer" : "Afficher" }} le mdp
-        </p> -->
       </div>
+      <div>
+        <input
+          v-model="newsletter"
+          type="checkbox"
+          id="newsletter"
+          name="newsletter"
+        />
+        <label for="newsletter">Je m'inscris à la newsletter</label>
+      </div>
+      <!-- Afficher ou masquer le mot de passe dans l'input -> à ajouter si besoin -->
+      <!-- <p @click="handlePasswordClick">
+        {{ showPassword ? "Masquer" : "Afficher" }} le mdp
+      </p> -->
       <div>
         <a href="#"> Mot de passe oublié ?</a>
       </div>
       <div v-if="hasError">
         <p>Veuillez entrer toutes les informations</p>
       </div>
-      <ButtonHM class="-Secondary">Connexion</ButtonHM>
+      <ButtonHM class="-Secondary">Inscription</ButtonHM>
     </form>
   </div>
 </template>
@@ -66,6 +91,16 @@ export default {
 <style lang="scss" scoped>
 .formLogIn {
   text-align: center;
+  &__Identity{
+    display: flex;
+    justify-content: space-between;
+    width: 30%;
+    margin: auto;
+    &__Input{
+      width: 45%;
+      margin: 0;
+    }
+  }
 }
 
 a {
