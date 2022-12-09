@@ -1,4 +1,4 @@
-@import url(../fonts/IntFonts.scss);
+@import url(./foundations/_IntFonts.scss);
 
 * {
   box-sizing: border-box;
@@ -12,7 +12,13 @@ body {
 }
 
 h1 {
-  font-family: $title-font-family;
+  font-family: 'CaviarDreams';
+}
+h2 {
+  font-family: 'Rasputin';
+}
+h3 {
+  font-family: 'Poppins';
 }
   
 ul {
