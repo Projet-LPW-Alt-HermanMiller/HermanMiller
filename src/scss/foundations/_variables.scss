@@ -20,7 +20,8 @@ $HMColorSecondary : #FA7351;
 $title-font-family: 'Caviar Dreams';
 $secondary-title-font-family: 'Rasputin';
 $text-font-family: 'Poppins';
-$base-font-size: 16px;
+$base-font-size: rem(16);
+$small-font-size: rem(14);
 
 .fontH1 {
     font-family: $title-font-family;
