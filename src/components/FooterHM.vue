@@ -5,7 +5,7 @@
 
 <template>
   <div class="footer__left">
-    <img src="" />
+    <img src="../assets/logos/hm-logo-caption.svg" />
     <div class="footer__list">
       <h5 class="footer__title">NOUS CONTACTER</h5>
       <p class="footer__info">info_france@hermanmiller.com</p>
