@@ -18,13 +18,8 @@ export default {
     <h1>Caviar</h1>
     <h2>Rasputin</h2>
     <h3>Poppins</h3>
-    <ButtonHM
-    text="Bouton"
-    link="#" />
-    <ButtonHM
-    class="-Secondary"
-    text="Bouton"
-    link="#" />
+    <ButtonHM text="Bouton" link="#" />
+    <ButtonHM class="-Secondary" text="Bouton" link="#" />
     <FooterHM></FooterHM>
   </main>
 </template>

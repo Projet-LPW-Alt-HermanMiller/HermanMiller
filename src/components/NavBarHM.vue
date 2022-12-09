@@ -4,18 +4,18 @@
 <template>
     <nav class="nav">
         <div class="nav__elements nav__flex">
-            <div class="nav__left nav__logo"><a href="index.html"><img src="logos/HM_LDR.png"></a></div>
+            <div class="nav__left nav__logo"><a href="index.html"><img src="../assets/logos/HM_LDR.png"></a></div>
             <div class="nav__middle nav__flex">
                 <ul class="nav__list nav__flex">
                     <li class="nav__item titleNavBar"><a href="#">Sièges</a></li>
                     <li class="nav__item titleNavBar"><a href="#">Solutions</a></li>
                     <li class="nav__item titleNavBar"><a href="#">Ressources</a></li>
                 </ul>
-                <div class="nav__icon"><a href="#"><img src="icons/feather/search.svg"></a></div>
+                <div class="nav__icon"><a href="#"><img src="../assets/icons/search.svg"></a></div>
             </div>
             <div class="nav__right nav__flex">
-                <div class="nav__icon"><a href="#"><img src="icons/feather/shopping-cart.svg"></a></div>
-                <div class="nav__icon"><a href="#"><img src="icons/feather/user.svg"></a></div>
+                <div class="nav__icon"><a href="#"><img src="../assets/icons/shopping-cart.svg"></a></div>
+                <div class="nav__icon"><a href="#"><img src="../assets/icons/user.svg"></a></div>
             </div>
         </div>
     </nav>
