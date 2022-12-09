@@ -8,12 +8,21 @@ $backgroundSecondary : #ECECEC;
 $backgroundFooterLight : #DDDAE1;
 $backgroundFooterDark : #CAC6CE;
 
+// gris à remplacer
+$darkGrey : rgb(46, 46, 46);
+
 $white : #FAFAFA;
 $black : #070707;
  
 $HMColor : #E22D00;
 $HMColorSecondary : #FA7351;
 
-$title-font-family: 'Rasputin';
+$title-font-family: 'Caviar Dreams';
+$secondary-title-font-family: 'Rasputin';
 $text-font-family: 'Poppins';
 $base-font-size: 16px;
+
+.fontH1 {
+    font-family: $title-font-family;
+    font-size: rem(48);
+}

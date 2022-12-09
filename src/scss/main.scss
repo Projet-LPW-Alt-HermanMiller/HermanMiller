@@ -34,3 +34,12 @@ ul {
   font-size: rem(18);
 }
 
+input {
+  font-family: $text-font-family;
+  font-size: $base-font-size;
+  padding-left : 0.5rem;
+  margin: rem(12);
+  &::placeholder{
+    color: $darkGrey;
+  }
+}

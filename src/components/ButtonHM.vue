@@ -8,8 +8,8 @@ export default {
 </script>
 
 <template>
-  <a v-if="link" :href="link" class="button">{{ text }}</a>
-  <button v-else class="button">{{ text }}</button>
+  <a v-if="link" :href="link" class="button"><slot></slot></a>
+  <button v-else class="button"><slot></slot></button>
 </template>
 
 <style lang="scss" scoped>
