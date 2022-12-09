@@ -58,7 +58,7 @@ export default {
       <div v-if="hasError">
         <p>Veuillez entrer toutes les informations</p>
       </div>
-      <ButtonHM class="-Secondary">Submit Form</ButtonHM>
+      <ButtonHM class="-Secondary">Connexion</ButtonHM>
     </form>
   </div>
 </template>
