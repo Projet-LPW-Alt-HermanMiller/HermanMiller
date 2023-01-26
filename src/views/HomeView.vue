@@ -19,10 +19,12 @@ export default {
 <template>
   <main>
     <NavBarHM></NavBarHM>
-    <h1>Caviar</h1>
-    <h2>Rasputin</h2>
+    <h1>Outfit</h1>
+    <h2>Poppins</h2>
     <h3>Poppins</h3>
-    <div>dgeg "ger grgrg  et"g regrgzgzgz thtehzrg ztttezf tzetz</div>
+    <div>
+      Texte
+    </div>
     <ButtonHM>TEST 1</ButtonHM>
     <ButtonHM class="-Secondary">TEST 2343536454363</ButtonHM>
     <FormLogInHM />
