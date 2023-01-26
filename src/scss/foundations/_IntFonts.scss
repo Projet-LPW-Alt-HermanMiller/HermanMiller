@@ -1,22 +1,20 @@
 @font-face {
-    font-family: 'Caviar Dreams';
-    src: url('/src/assets/fonts/CaviarDreams-Bold.woff2') format('woff2');
+    font-family: 'Outfit';
+    src: url('/src/assets/fonts/Outfit-VariableFont_wght.ttf') format('ttf');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('/src/assets/fonts/Roboto-Bold.ttf') format('ttf');
     font-weight: bold;
     font-style: normal;
     font-display: swap;
 }
 
 @font-face {
-    font-family: 'CaviarDreams';
-    src: url('/src/assets/fonts/CaviarDreams.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Rasputin';
-    src: url('/src/assets/fonts/RasputinRegular.woff2') format('woff2');
+    font-family: 'Roboto';
+    src: url('/src/assets/fonts/Roboto-Regular.ttf') format('ttf');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
