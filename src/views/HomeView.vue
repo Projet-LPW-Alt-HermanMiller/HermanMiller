@@ -3,6 +3,7 @@ import NavBarHM from "../components/NavBarHM.vue";
 import FooterHM from "../components/FooterHM.vue";
 import ButtonHM from "../components/ButtonHM.vue";
 import FormLogInHM from "../components/FormLogInHM.vue";
+import FormSignInHM from "../components/FormSignInHM.vue";
 
 export default {
   components: {
@@ -10,6 +11,7 @@ export default {
     FooterHM,
     ButtonHM,
     FormLogInHM,
+    FormSignInHM,
   },
 };
 </script>
@@ -26,6 +28,7 @@ export default {
     <ButtonHM>TEST 1</ButtonHM>
     <ButtonHM class="-Secondary">TEST 2343536454363</ButtonHM>
     <FormLogInHM />
+    <FormSignInHM />
     <FooterHM></FooterHM>
   </main>
 </template>
