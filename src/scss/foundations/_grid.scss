@@ -1,0 +1,23 @@
+.container {
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+  flex-flow: row wrap;
+  width: calc(100% + 40px);
+  margin-right: -20px;
+  margin-left: -20px;
+}
+
+.column {
+  padding: 0 20px;
+}
+
+@for $i from 1 through 12 {
+  .column.-size-#{$i} {
+    width: calc(100% * calc($i / 12))
+  }
+}

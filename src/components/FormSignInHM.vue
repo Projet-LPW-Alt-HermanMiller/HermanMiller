@@ -66,7 +66,6 @@ export default {
       </div>
       <div>
         <input
-          v-model="newsletter"
           type="checkbox"
           id="newsletter"
           name="newsletter"
