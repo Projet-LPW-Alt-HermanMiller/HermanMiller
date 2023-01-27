@@ -22,7 +22,7 @@
       <p style="margin-top: 100px;">Mes produits</p>
       <div class="row">
         <div class="column -size-3" v-for="(product, index) in products" :key="index">
-          <Product :name="product.name" :slug="product.slug" :price="product.price" :images="product.images" />
+          <ProductHM :name="product.name" :slug="product.slug" :price="product.price" :images="product.images" />
         </div>
       </div>
       <p style="margin-top: 100px;">Mes categories de produit</p>
@@ -33,7 +33,7 @@
       </ul>
     </div>
     <div v-if="page.acf" class="homeview__showroom">
-      <Showroom :title="page.acf.title" :images="page.acf.images" />
+      <ShowroomHM :title="page.acf.title" :images="page.acf.images" />
     </div>
   </main>
 </template>
