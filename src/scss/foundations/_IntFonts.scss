@@ -37,6 +37,14 @@
 }
 
 @font-face {
+    font-family: 'PoppinsMedium';
+    src: url('src/assets/fonts/Poppins-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
     font-family: 'Poppins';
     src: url('/src/assets/fonts/Poppins-Regular.woff2') format('woff2');
     font-weight: normal;
@@ -45,7 +53,7 @@
 }
 
 @font-face {
-    font-family: 'Poppins';
+    font-family: 'PoppinsLight';
     src: url('/src/assets/fonts/Poppins-Light.woff2') format('woff2');
     font-weight: 300;
     font-style: normal;
