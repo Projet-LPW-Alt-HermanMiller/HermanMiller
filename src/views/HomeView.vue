@@ -42,16 +42,12 @@
 import { client } from '@/utils/axios'
 import ProductHM from "@/components/ProductHM.vue";
 import ShowroomHM from "@/components/ShowroomHM.vue";
-import NavBarHM from "../components/NavBarHM.vue";
-import FooterHM from "../components/FooterHM.vue";
 import ButtonHM from "../components/ButtonHM.vue";
 import FormLogInHM from "../components/FormLogInHM.vue";
 import FormSignInHM from "../components/FormSignInHM.vue";
 
 export default {
   components: {
-    NavBarHM,
-    FooterHM,
     ButtonHM,
     FormLogInHM,
     FormSignInHM,
