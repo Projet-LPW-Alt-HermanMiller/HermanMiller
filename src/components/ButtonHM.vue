@@ -8,8 +8,12 @@ export default {
 </script>
 
 <template>
-  <a v-if="link" :href="link" class="button"><slot></slot></a>
-  <button v-else class="button"><slot></slot></button>
+  <a v-if="link" :href="link" class="button">
+    <slot></slot>
+  </a>
+  <button v-else class="button">
+    <slot></slot>
+  </button>
 </template>
 
 <style lang="scss" scoped>
@@ -24,17 +28,20 @@ export default {
   font-size: 1rem;
   font-family: "Arial";
   line-height: 1rem;
-  text-decoration:none;
+  text-decoration: none;
+
   &:hover {
     color: $HMColor;
     background: $white;
   }
-  &.-Secondary{
+
+  &.-Secondary {
     color: $HMColor;
     background: $white;
+
     &:hover {
-        background: $HMColor;
-        color: $white;
+      background: $HMColor;
+      color: $white;
     }
   }
 }

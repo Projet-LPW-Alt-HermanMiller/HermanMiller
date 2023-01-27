@@ -1,12 +1,12 @@
 @font-face {
     font-family: 'Outfit';
-    src: url('/src/assets/fonts/Outfit-VariableFont_wght.woff') format('woff');
+    src: url('/src/assets/fonts/Outfit-VariableFont_wght.woff2') format('woff2');
     font-display: swap;
 }
 
 @font-face {
     font-family: 'Roboto';
-    src: url('/src/assets/fonts/Roboto-Bold.woff') format('woff');
+    src: url('/src/assets/fonts/Roboto-Bold.woff2') format('woff2');
     font-weight: bold;
     font-style: normal;
     font-display: swap;
@@ -14,14 +14,22 @@
 
 @font-face {
     font-family: 'Roboto';
-    src: url('/src/assets/fonts/Roboto-Regular.woff') format('woff');
+    src: url('/src/assets/fonts/Roboto-Regular.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
 }
 
 @font-face {
-    font-family: 'PoppinsBold';
+    font-family: 'Roboto';
+    src: url('/src/assets/fonts/Roboto-Thin.woff2') format('woff2');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Poppins';
     src: url('/src/assets/fonts/Poppins-Bold.woff2') format('woff2');
     font-weight: bold;
     font-style: normal;
