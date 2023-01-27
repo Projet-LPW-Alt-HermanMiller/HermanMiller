@@ -23,6 +23,26 @@ $text-font-family: 'Roboto';
 $base-font-size: rem(16);
 $small-font-size: rem(14);
 
+
+//STYLES DE CLEMENT A SUPPRIMER PAR LA SUITE
+$main-color: white;
+$primary-color: chocolate;
+$background: black;
+$secondary-color: #243b3b;
+$text-font-family: "Helvetica";
+$title-font-family: "Helvetica";
+
+$text-font-size: 30px;
+$title-font-size: 60px;
+$subtitle-font-size: 40px;
+
+$x-small: 500px;
+$small: 640px;
+$medium: 960px;
+$large: 1200px;
+$x-large: 1500px;
+
+
 .fontH1 {
     font-family: $title-font-family;
     font-size: rem(48);
