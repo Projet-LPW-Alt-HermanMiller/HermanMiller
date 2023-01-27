@@ -5,7 +5,8 @@
 
 <template>
   <div class="footer">
-    <div class="footer__left">
+    <div class="footer__parts">
+      <div class="footer__left">
       <img src="../assets/logos/hm-logo-caption.svg" />
       <div class="footer__list">
         <h5 class="footer__title">NOUS CONTACTER</h5>
@@ -53,21 +54,26 @@
         <p>Politique de confidentialité</p>
       </div>
     </div>
+    </div>
+
   </div>
 </template>
 
 
 <style lang="scss" scoped>
 .footer {
-  display: flex;
   width: 100%;
-  height: 50vh;
+  height: max-content;
+  &__parts {
+    display: flex;
+  }
   &__left {
     background-color: $backgroundFooterLight;
     width: 30%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 10px 0 20px 0;
   }
   &__right {
     background-color: $backgroundFooterDark;
@@ -75,7 +81,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    padding-top: 40px;
+    padding: 40px 0 20px 0;
   }
   &__menu {
     background-color: $backgroundFooterDark;
@@ -89,6 +95,7 @@
     display: flex;
     justify-content: space-around;
     font-size: $small-font-size;
+    font-weight: 200;
   }
   &__RS {
     width: 70%;
