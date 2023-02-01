@@ -32,7 +32,9 @@ export default {
           <shopping-cart-ico/>
         </div>
         <div class="nav__icon">
-          <user-ico/>
+          <router-link to="/login">
+            <user-ico/>
+          </router-link>
         </div>
       </div>
     </div>
