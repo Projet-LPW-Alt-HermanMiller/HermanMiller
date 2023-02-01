@@ -28,28 +28,28 @@ export default {
 </script>
 
 <template>
-  <div class="formLogIn">
-    <div class="fontH1">Inscription</div>
+  <div class="form-logIn">
+    <div class="form-logIn__title">Inscription</div>
 
     <form @submit.prevent="handleSubmit">
       <div>
         <input
           v-model="email"
-          name="email" 
-          type="text" 
+          name="email"
+          type="text"
           placeholder="Adresse e-mail"
         />
       </div>
-      <div class="formLogIn__Identity">
+      <div class="">
         <input
-          class="formLogIn__Identity__Input"
+          class=""
           v-model="email"
-          name="email" 
-          type="text" 
-          placeholder="Adresse e-mail"
+          name="email"
+          type="text"
+          placeholder="Confirmer l'adresse e-mail"
         />
         <input
-          class="formLogIn__Identity__Input"
+          class=""
           v-model="password"
           name="password"
           :type="showPassword ? 'text' : 'password'"
@@ -61,7 +61,7 @@ export default {
           v-model="password"
           name="password"
           :type="showPassword ? 'text' : 'password'"
-          placeholder="Mot de passe"
+          placeholder="Confirmer le mot de passe"
         />
       </div>
       <div>
@@ -88,30 +88,5 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-.formLogIn {
-  text-align: center;
-  &__Identity{
-    display: flex;
-    justify-content: space-between;
-    width: 30%;
-    margin: auto;
-    &__Input{
-      width: 45%;
-      margin: 0;
-    }
-  }
-}
 
-a {
-  text-decoration: none;
-  color: $darkGrey;
-  margin: rem(12);
-  &:visited {
-    color: $darkGrey;
-  }
-}
-
-input{
-  width: 30%;
-}
 </style>

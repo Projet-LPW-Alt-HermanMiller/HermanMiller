@@ -17,3 +17,7 @@ export default {
   <RouterView />
   <FooterHM />
 </template>
+
+<style lang="scss">
+
+</style>
