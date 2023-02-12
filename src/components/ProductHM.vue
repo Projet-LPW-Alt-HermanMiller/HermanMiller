@@ -3,13 +3,18 @@
     <RouterLink :class="'product__link'" :to="`/products/${slug}`">
       <img v-if="image" class="product__image" :src="image" alt="">
       <p class="product__name">{{ name }}</p>
-      <span class="product__price">{{ price }}€</span>
+      <p class="product__category">Catégorie</p>
+      <span class="product__price">{{ price }}€</span><br>
+      <ButtonHM class="-Secondary">En savoir plus</ButtonHM>
     </RouterLink>
   </div>
 </template>
 
 <script>
+import ButtonHM from "@/components/ButtonHM.vue";
+
 export default {
+  components: { ButtonHM },
   props: {
     name: {
       type: String

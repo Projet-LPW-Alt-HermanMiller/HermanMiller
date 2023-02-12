@@ -2,7 +2,24 @@
   <div class="products-view">
     <div class="container">
       <div class="row">
-        <div class="column -size-3">
+
+        <!-- EN COURS : head de la page-->
+        <div class="products-view__head">
+          <div class="products-view__bg-image">
+            
+          </div>
+          <h1 class="products-view__head-title">
+            <span class="products-view__head-title-left">Sièges de</span><br>
+            <span class="products-view__head-title-right">bureau</span>
+          </h1>
+          <p class="products-view__head-text">
+            Comparez nos sièges de bureau et découvrez-en plus à leur sujet afin de trouver celui qui est fait pour vous.
+          </p>
+        </div>
+
+        <!-- FILTRES -->
+        <div class="column -size-3 products-view__filter">
+          <p>Filtres</p>
           <p class="products-view__filter-title">Filtre par pièce</p>
           <!-- Remplir selon les catégories qu'on mettra !!! -->
           
@@ -24,7 +41,7 @@
           <div class="products-view__list">
             <div class="row">
               <div class="column -size-3" v-for="(product, index) in displayedProducts" :key="index">
-                <Product :name="product.name" :slug="product.slug" :price="product.price" :images="product.images" />
+                <ProductHM :name="product.name" :slug="product.slug" :price="product.price" :images="product.images" />
               </div>
             </div>
           </div>
@@ -40,10 +57,10 @@
 
 <script>
 import { client } from "@/utils/axios";
-import Product from "@/components/Product.vue";
+import ProductHM from "@/components/ProductHM.vue";
 
 export default {
-  components: { Product },
+  components: { ProductHM },
   data () {
     return {
       products: [],
