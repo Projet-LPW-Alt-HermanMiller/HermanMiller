@@ -30,17 +30,15 @@ export default {
 <template>
   <div class="formLogIn">
     <div class="fontH1">Connexion</div>
-
     <form @submit.prevent="handleSubmit">
-      <div>
+
         <input
           v-model="email"
-          name="email" 
-          type="text" 
+          name="email"
+          type="text"
           placeholder="Adresse e-mail"
         />
-      </div>
-      <div>
+
         <input
           v-model="password"
           name="password"
@@ -51,7 +49,7 @@ export default {
         <!-- <p @click="handlePasswordClick">
           {{ showPassword ? "Masquer" : "Afficher" }} le mdp
         </p> -->
-      </div>
+
       <div>
         <a href="#"> Mot de passe oublié ?</a>
       </div>
@@ -66,6 +64,9 @@ export default {
 <style lang="scss" scoped>
 .formLogIn {
   text-align: center;
+  &__div {
+
+  }
 }
 
 a {
@@ -77,7 +78,9 @@ a {
   }
 }
 
+
 input{
-  width: 30%;
+  width: 100%;
+  margin: .5rem 0;
 }
 </style>

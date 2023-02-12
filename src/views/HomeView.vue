@@ -8,8 +8,6 @@
     </div>
     <ButtonHM>TEST 1</ButtonHM>
     <ButtonHM class="-Secondary">TEST 2343536454363</ButtonHM>
-    <FormLogInHM />
-    <FormSignInHM />
 
     <div class="container">
       <div @click="gotoThankYouPage">Merci !</div>
@@ -43,14 +41,10 @@ import { client } from '@/utils/axios'
 import ProductHM from "@/components/ProductHM.vue";
 import ShowroomHM from "@/components/ShowroomHM.vue";
 import ButtonHM from "../components/ButtonHM.vue";
-import FormLogInHM from "../components/FormLogInHM.vue";
-import FormSignInHM from "../components/FormSignInHM.vue";
 
 export default {
   components: {
     ButtonHM,
-    FormLogInHM,
-    FormSignInHM,
     ShowroomHM,
     ProductHM
   },
@@ -72,6 +66,7 @@ export default {
     // Get all woocommerce products
     const productResponse = await client.get("/wc/v3/products")
     this.products = productResponse.data
+    console.log(this.products)
 
     // Get all woocommerce categories
     const categoriesResponse = await client.get("/wc/v3/products/categories")
@@ -81,7 +76,7 @@ export default {
     const homepageResponse = await client.get("/wp/v2/pages/28838")
     this.page = homepageResponse.data
   },
-  
+
   methods: {
     // goToThankYouPage () {
     //   this.$router.push({
