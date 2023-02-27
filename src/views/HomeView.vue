@@ -7,7 +7,11 @@
       <OurChairs :product-data="products" />
     </main>
     <section class="homeview__section">
-      <PartnersHM/>
+      <PartnersHM />
+      <h2 class="homeview__section-H2">
+        <span>Témoignages</span><br />Ce que les utilisateurs disent de nous
+      </h2>
+      <single-testimony-h-m :data-testimonies="testimonies" />
     </section>
   </div>
 </template>
@@ -18,9 +22,11 @@ import CarrouselHM from "@/components/CarrouselHM.vue";
 import PresentationTypeHM from "@/components/PresentationTypeHM.vue";
 import OurChairs from "@/components/OurChairsHM.vue";
 import PartnersHM from "@/components/partnersHM.vue";
+import SingleTestimonyHM from "@/components/SingleTestimonyHM.vue";
 
 export default {
   components: {
+    SingleTestimonyHM,
     PartnersHM,
     OurChairs,
     PresentationTypeHM,
@@ -32,6 +38,7 @@ export default {
       products: [],
       categories: [],
       page: {},
+      testimonies: [],
     };
   },
 
@@ -40,6 +47,10 @@ export default {
     const response = await client.get("/wp/v2/posts");
     this.posts = response.data;
     console.log(this.posts);
+
+    //Get all testimonies
+    const testimoniesResponse = await client.get("/wp/v2/testimony");
+    this.testimonies = testimoniesResponse.data;
 
     // Get all woocommerce products
     const productResponse = await client.get("/wc/v3/products");
@@ -68,9 +79,19 @@ export default {
 
 <style lang="scss" scoped>
 .homeview {
-  &__main, &__section {
+  &__main,
+  &__section {
     padding-left: 100px;
     padding-right: 100px;
+  }
+  &__section {
+    background-color: #f5f5f5;
+  }
+  &__section-H2 {
+    text-align: center;
+    span {
+      font-weight: 300;
+    }
   }
 }
 </style>
