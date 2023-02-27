@@ -1,6 +1,6 @@
 <template>
   <div class="partners-HM">
-    <h2 class="partners-HM__title">Nos partenaires</h2>
+    <h2 class="partners-HM__title">Ils nous font confiance</h2>
     <div class="partners-HM__container">
       <div class="partners-HM__layout">
         <div
@@ -23,19 +23,19 @@ export default {
       partners: [
         {
           id: 1,
-          src: "./public/partners/partner_1.png",
+          src: "/partners/partner_1.png",
         },
         {
           id: 2,
-          src: "./public/partners/partner_2.png",
+          src: "/partners/partner_2.png",
         },
         {
           id: 3,
-          src: "./public/partners/partner_3.png",
+          src: "/partners/partner_3.png",
         },
         {
           id: 4,
-          src: "./public/partners/partner_4.png",
+          src: "/partners/partner_4.png",
         },
       ],
     };
