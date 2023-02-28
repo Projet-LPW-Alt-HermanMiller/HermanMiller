@@ -12,6 +12,7 @@
         <span>Témoignages</span><br />Ce que les utilisateurs disent de nous
       </h2>
       <single-testimony-h-m :data-testimonies="testimonies" />
+      <news-letter-h-m/>
     </section>
   </div>
 </template>
@@ -23,9 +24,11 @@ import PresentationTypeHM from "@/components/PresentationTypeHM.vue";
 import OurChairs from "@/components/OurChairsHM.vue";
 import PartnersHM from "@/components/partnersHM.vue";
 import SingleTestimonyHM from "@/components/SingleTestimonyHM.vue";
+import NewsLetterHM from "@/components/newsLetterHM.vue";
 
 export default {
   components: {
+    NewsLetterHM,
     SingleTestimonyHM,
     PartnersHM,
     OurChairs,
