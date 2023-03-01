@@ -1,6 +1,6 @@
 <template>
   <div class="ourChairs-HM">
-    <h2 class="ourChairs-HM__title">Nos sièges</h2>
+    <h2 class="ourChairs-HM__title">{{ title }}</h2>
     <div class="ourChairs-HM__container" v-if="productData.length">
       <div class="ourChairs-HM__layout">
         <div class="ourChairs-HM__item" v-for="product in productData" :key="product.ID">
@@ -26,6 +26,10 @@ export default {
     productData: {
       type: Object,
       default: () => {},
+    },
+    title: {
+      type: String,
+      default: "Nos sièges",
     },
   },
 };
