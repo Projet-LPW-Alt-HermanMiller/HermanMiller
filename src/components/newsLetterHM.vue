@@ -48,7 +48,7 @@ export default {
 
     h2 {
       span {
-        color: $HMColor;
+        color: #3b7fcc;
       }
     }
   }
