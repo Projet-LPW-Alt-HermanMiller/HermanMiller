@@ -62,6 +62,9 @@ export default {
     // Get product data
     await this.getProductData(this.$route.params.product);
   },
+  async beforeRouteUpdate(to, from) {
+    await this.getProductData(to.params.product);
+  },
   methods: {
     async getProductData(slug) {
       const response = await client.get("/wc/v3/products?slug=" + slug);
