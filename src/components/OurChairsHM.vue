@@ -8,7 +8,9 @@
           <div class="ourChairs-HM__text">
             <h3 class="ourChairs-HM__product-title">{{ product.name }}</h3>
             <p v-if="product.acf.tag" class="ourChairs-HM__description">{{ product.acf.tag }}</p>
-            <ButtonHM>En savoir plus</ButtonHM>
+            <a :href="`/produit/${product.slug}`">
+              <ButtonHM>En savoir plus</ButtonHM>
+            </a>
           </div>
         </div>
       </div>

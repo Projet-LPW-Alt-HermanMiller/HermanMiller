@@ -22,14 +22,14 @@ export default {
   display: inline-block;
   background: $HMColor;
   color: $white;
-  border: 1px solid $HMColor;
   border-radius: 2px;
   margin: 0.5rem;
   font-size: 1rem;
-  font-family: "Arial";
+  font-family: $text-font-family, sans-serif;
   line-height: 1rem;
   text-decoration: none;
   cursor: pointer;
+  border: 1px solid $HMColor;
 
   &:hover {
     color: $HMColor;
@@ -39,7 +39,6 @@ export default {
   &.-Secondary {
     color: $HMColor;
     background: $white;
-
     &:hover {
       background: $HMColor;
       color: $white;
