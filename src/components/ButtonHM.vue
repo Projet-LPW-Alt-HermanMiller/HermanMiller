@@ -29,6 +29,7 @@ export default {
   font-family: "Arial";
   line-height: 1rem;
   text-decoration: none;
+  cursor: pointer;
 
   &:hover {
     color: $HMColor;

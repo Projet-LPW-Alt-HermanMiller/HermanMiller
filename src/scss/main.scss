@@ -5,22 +5,22 @@
 }
 
 body {
-  margin : 0px;
-  padding : 0px;
+  margin : 0;
+  padding : 0;
   font-family: $text-font-family;
   font-size: $base-font-size;
 }
 
 h1 {
-  font-family: 'Outfit';
+  font-family: 'Outfit', sans-serif;
 }
 
 h2 {
-  font-family: 'Poppins';
+  font-family: 'Poppins', sans-serif;
 }
 
 h3 {
-  font-family: 'Poppins';
+  font-family: 'Poppins', sans-serif;
 }
 
 ul {
@@ -30,7 +30,7 @@ ul {
 
 .titleNavBar {
   color: $black;
-  font-weight: medium ;
+  font-weight: 400;
   font-size: rem(18);
 }
 

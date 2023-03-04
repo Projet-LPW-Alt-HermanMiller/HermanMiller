@@ -1,80 +1,72 @@
 <template>
-  <main class="homeview">
-    <h1>Outfit</h1>
-    <h2>Poppins</h2>
-    <h3>Poppins</h3>
-    <div>
-      Texte
-    </div>
-    <ButtonHM>TEST 1</ButtonHM>
-    <ButtonHM class="-Secondary">TEST 2343536454363</ButtonHM>
-
-    <div class="container">
-      <div @click="gotoThankYouPage">Merci !</div>
-      <p>Mes articles</p>
-      <ul>
-        <li v-for="(post, index) in posts">
-          <span>{{ post.title.rendered }}</span>
-        </li>
-      </ul>
-      <p style="margin-top: 100px;">Mes produits</p>
-      <div class="row">
-        <div class="column -size-3" v-for="(product, index) in products" :key="index">
-          <ProductHM :name="product.name" :slug="product.slug" :price="product.price" :images="product.images" />
-        </div>
-      </div>
-      <p style="margin-top: 100px;">Mes categories de produit</p>
-      <ul>
-        <li v-for="(category, index) in categories">
-          <span>{{ category.name }}</span>
-        </li>
-      </ul>
-    </div>
-    <div v-if="page.acf" class="homeview__showroom">
-      <ShowroomHM :title="page.acf.title" :images="page.acf.images" />
-    </div>
-  </main>
+  <div class="homeview">
+    <carrousel-h-m />
+    <main class="homeview__main">
+      <PresentationTypeHM />
+      <PresentationTypeHM :isReverse="true" />
+      <OurChairs :product-data="products" />
+    </main>
+    <section class="homeview__section">
+      <PartnersHM />
+      <h2 class="homeview__section-H2">
+        <span>Témoignages</span><br />Ce que les utilisateurs disent de nous
+      </h2>
+      <single-testimony-h-m :data-testimonies="testimonies" />
+      <news-letter-h-m/>
+    </section>
+  </div>
 </template>
 
 <script>
-import { client } from '@/utils/axios'
-import ProductHM from "@/components/ProductHM.vue";
-import ShowroomHM from "@/components/ShowroomHM.vue";
-import ButtonHM from "../components/ButtonHM.vue";
+import { client } from "@/utils/axios";
+import CarrouselHM from "@/components/CarrouselHM.vue";
+import PresentationTypeHM from "@/components/PresentationTypeHM.vue";
+import OurChairs from "@/components/OurChairsHM.vue";
+import PartnersHM from "@/components/partnersHM.vue";
+import SingleTestimonyHM from "@/components/SingleTestimonyHM.vue";
+import NewsLetterHM from "@/components/newsLetterHM.vue";
 
 export default {
   components: {
-    ButtonHM,
-    ShowroomHM,
-    ProductHM
+    NewsLetterHM,
+    SingleTestimonyHM,
+    PartnersHM,
+    OurChairs,
+    PresentationTypeHM,
+    CarrouselHM,
   },
-  data () {
+  data() {
     return {
       posts: [],
       products: [],
       categories: [],
-      page: {}
+      page: {},
+      testimonies: [],
     };
   },
 
   async mounted() {
     // Get all wordpress posts
-    const response = await client.get("/wp/v2/posts")
-    this.posts = response.data
+    const response = await client.get("/wp/v2/posts");
+    this.posts = response.data;
+    console.log(this.posts);
 
+    //Get all testimonies
+    const testimoniesResponse = await client.get("/wp/v2/testimony");
+    this.testimonies = testimoniesResponse.data;
 
     // Get all woocommerce products
-    const productResponse = await client.get("/wc/v3/products")
-    this.products = productResponse.data
-    console.log(this.products)
+    const productResponse = await client.get("/wc/v3/products");
+    this.products = productResponse.data;
+    console.log(this.products);
 
     // Get all woocommerce categories
-    const categoriesResponse = await client.get("/wc/v3/products/categories")
-    this.categories = categoriesResponse.data
+    const categoriesResponse = await client.get("/wc/v3/products/categories");
+    this.categories = categoriesResponse.data;
 
     // Get homepage data
-    const homepageResponse = await client.get("/wp/v2/pages/28838")
-    this.page = homepageResponse.data
+    const homepageResponse = await client.get("/wp/v2/pages/28838");
+    this.page = homepageResponse.data;
   },
 
   methods: {
@@ -84,6 +76,25 @@ export default {
     //     params: { id: 12}
     //   })
     // }
-  }
+  },
 };
 </script>
+
+<style lang="scss" scoped>
+.homeview {
+  &__main,
+  &__section {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+  &__section {
+    background-color: #f5f5f5;
+  }
+  &__section-H2 {
+    text-align: center;
+    span {
+      font-weight: 300;
+    }
+  }
+}
+</style>
