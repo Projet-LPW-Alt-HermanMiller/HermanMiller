@@ -3,26 +3,26 @@
     <div class="heroSection-HM__content">
       <div class="heroSection-HM__image">
         <img
-          src="https://www.hermanmiller.com/content/dam/hmi/hmidam/active/2022/01/28/HM_AEN_0011.tif.rendition.1440.1440.jpg"
+          :src="imgIllustration"
           alt=""
         />
       </div>
       <div class="heroSection-HM__product-overview">
         <div class="heroSection-HM__product-overview-image">
           <img
-            src="https://www.hermanmiller.com/content/dam/hmi/hmidam/active/2021/08/16/HM_AER_61588_RET.tif.rendition.1440.1440.jpg"
+            :src="imgProduct"
             alt=""
           />
         </div>
         <div class="heroSection-HM__product-overview__texts">
           <div class="heroSection-HM__product-overview__title">
-            <h1>Aeron</h1>
+            <h1>{{ title }}</h1>
           </div>
           <div class="heroSection-HM__product-overview__description">
-            <p>Le siège ultime</p>
+            <p>{{ description }}</p>
           </div>
           <div class="heroSection-HM__product-overview__price">
-            <p>1599€ TTC</p>
+            <p>À partir de {{ price }} €</p>
           </div>
           <div class="heroSection-HM__product-overview__button">
             <button-h-m>Acheter</button-h-m>
@@ -39,6 +39,30 @@ import ButtonHM from "@/components/ButtonHM.vue";
 export default {
   name: "heroSectionHM",
   components: { ButtonHM },
+  props: {
+    imgIllustration: {
+      type: String,
+      default:
+        "https://www.hermanmiller.com/content/dam/hmi/hmidam/active/2022/01/28/HM_AEN_0011.tif.rendition.1440.1440.jpg",
+    },
+    imgProduct: {
+      type: String,
+      default:
+        "https://www.hermanmiller.com/content/dam/hmi/hmidam/active/2021/08/16/HM_AER_61588_RET.tif.rendition.1440.1440.jpg",
+    },
+    title: {
+      type: String,
+      default: "Aeron",
+    },
+    description: {
+      type: String,
+      default: "Le siège ultime",
+    },
+    price: {
+      type: String,
+      default: "1599€ TTC",
+    },
+  },
 };
 </script>
 
@@ -95,7 +119,6 @@ export default {
       font-size: 24px;
       font-weight: 400;
       color: black;
-      text-align: left;
       margin-bottom: 20px;
       text-align: center;
     }

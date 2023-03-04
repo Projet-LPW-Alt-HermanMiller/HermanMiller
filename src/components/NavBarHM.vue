@@ -9,14 +9,18 @@ export default {
     userIco,
     shoppingCartIco,
     searchIco,
-  }
-}
+  },
+};
 </script>
 
 <template>
   <nav class="nav">
     <div class="nav__elements nav__flex">
-      <div class="nav__left nav__logo"><a href="index.html"><img src="../assets/logos/HM_LDR.png"></a></div>
+      <div class="nav__left nav__logo">
+        <router-link to="/"
+          ><img src="../assets/logos/HM_LDR.png"
+         alt=""/></router-link>
+      </div>
       <div class="nav__middle nav__flex">
         <ul class="nav__list nav__flex">
           <li class="nav__item titleNavBar"><a href="#">Sièges</a></li>
@@ -24,16 +28,16 @@ export default {
           <li class="nav__item titleNavBar"><a href="#">Ressources</a></li>
         </ul>
         <div class="nav__icon">
-          <search-ico/>
+          <search-ico />
         </div>
       </div>
       <div class="nav__right nav__flex">
         <div class="nav__icon">
-          <shopping-cart-ico/>
+          <shopping-cart-ico />
         </div>
         <div class="nav__icon">
           <router-link to="/login">
-            <user-ico/>
+            <user-ico />
           </router-link>
         </div>
       </div>
@@ -42,7 +46,6 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-
 .nav {
   padding: 10px;
   margin: 0px;
@@ -61,7 +64,6 @@ export default {
     img {
       max-width: 50px;
       display: inline-block;
-
     }
   }
 
@@ -95,5 +97,4 @@ export default {
     }
   }
 }
-
 </style>
