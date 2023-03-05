@@ -1,6 +1,6 @@
 <template>
   <div class="homeview">
-    <carrousel-h-m />
+    <carrousel-h-m :products="products" />
     <main class="homeview__main">
       <PresentationTypeHM />
       <PresentationTypeHM :isReverse="true" />
@@ -12,7 +12,7 @@
         <span>Témoignages</span><br />Ce que les utilisateurs disent de nous
       </h2>
       <single-testimony-h-m :data-testimonies="testimonies" />
-      <news-letter-h-m/>
+      <news-letter-h-m />
     </section>
   </div>
 </template>

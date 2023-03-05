@@ -4,8 +4,7 @@
       <div class="newsLetter-HM__title">
         <h2>
           <span>Newsletter</span><br />
-          Restez au courant des dernières
-          nouveautés
+          Restez au courant des dernières nouveautés
         </h2>
       </div>
       <div class="newsLetter-HM__form">

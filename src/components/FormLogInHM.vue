@@ -31,22 +31,21 @@ export default {
   <div class="formLogIn">
     <div class="fontH1">Connexion</div>
     <form @submit.prevent="handleSubmit">
+      <input
+        v-model="email"
+        name="email"
+        type="text"
+        placeholder="Adresse e-mail"
+      />
 
-        <input
-          v-model="email"
-          name="email"
-          type="text"
-          placeholder="Adresse e-mail"
-        />
-
-        <input
-          v-model="password"
-          name="password"
-          :type="showPassword ? 'text' : 'password'"
-          placeholder="Mot de passe"
-        />
-        <!-- Afficher ou masquer le mot de passe dans l'input -> à ajouter si besoin -->
-        <!-- <p @click="handlePasswordClick">
+      <input
+        v-model="password"
+        name="password"
+        :type="showPassword ? 'text' : 'password'"
+        placeholder="Mot de passe"
+      />
+      <!-- Afficher ou masquer le mot de passe dans l'input -> à ajouter si besoin -->
+      <!-- <p @click="handlePasswordClick">
           {{ showPassword ? "Masquer" : "Afficher" }} le mdp
         </p> -->
 
@@ -65,7 +64,6 @@ export default {
 .formLogIn {
   text-align: center;
   &__div {
-
   }
 }
 
@@ -78,9 +76,8 @@ a {
   }
 }
 
-
-input{
+input {
   width: 100%;
-  margin: .5rem 0;
+  margin: 0.5rem 0;
 }
 </style>

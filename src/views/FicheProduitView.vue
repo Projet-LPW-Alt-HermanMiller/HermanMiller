@@ -6,6 +6,7 @@
       :description="product.acf.tag"
       :img-product="product.images[0].src"
       :img-illustration="product.acf.image_hero.url"
+      :slug="product.slug"
     />
     <div class="ficheProduit-view__content">
       <presentation-type-h-m
@@ -38,8 +39,6 @@ import OurChairs from "@/components/OurChairsHM.vue";
 import { client } from "@/utils/axios";
 import PresentationTypeHM from "@/components/PresentationTypeHM.vue";
 import ProductGalleryHM from "@/components/productGalleryHM.vue";
-import SpecificationSectionHM from "@/components/specificationSectionHM.vue";
-
 export default {
   name: "FicheProduitView",
   components: {

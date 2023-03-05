@@ -2,17 +2,11 @@
   <div class="heroSection-HM">
     <div class="heroSection-HM__content">
       <div class="heroSection-HM__image">
-        <img
-          :src="imgIllustration"
-          alt=""
-        />
+        <img :src="imgIllustration" alt="" />
       </div>
       <div class="heroSection-HM__product-overview">
         <div class="heroSection-HM__product-overview-image">
-          <img
-            :src="imgProduct"
-            alt=""
-          />
+          <img :src="imgProduct" alt="" />
         </div>
         <div class="heroSection-HM__product-overview__texts">
           <div class="heroSection-HM__product-overview__title">
@@ -25,7 +19,9 @@
             <p>À partir de {{ price }} €</p>
           </div>
           <div class="heroSection-HM__product-overview__button">
-            <button-h-m>Acheter</button-h-m>
+            <router-link :to="`/achat/${slug}`">
+              <button-h-m>Acheter</button-h-m>
+            </router-link>
           </div>
         </div>
       </div>
@@ -61,6 +57,10 @@ export default {
     price: {
       type: String,
       default: "1599€ TTC",
+    },
+    slug: {
+      type: String,
+      default: "aeron",
     },
   },
 };

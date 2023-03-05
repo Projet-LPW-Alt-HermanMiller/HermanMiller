@@ -1,6 +1,9 @@
 <template>
   <div class="specificationSection-HM">
-    <section class="specificationSection-HM__section" :style="'background-image: url('+backgroundImage+')'">
+    <section
+      class="specificationSection-HM__section"
+      :style="'background-image: url(' + backgroundImage + ')'"
+    >
       <div class="specificationSection-HM__section__content">
         <div class="specificationSection-HM__section__content__title">
           <h2>{{ title }}</h2>
@@ -20,11 +23,12 @@ import ButtonHM from "@/components/ButtonHM.vue";
 
 export default {
   name: "specificationSectionHM",
-  components: {ButtonHM},
+  components: { ButtonHM },
   props: {
     text: {
       type: String,
-      default: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl ut aliquam luctus, nisl nisl aliquam nisl, eu aliquam nisl nisl eu nisl. Sed euismod, nisl ut aliquam luctus, nisl nisl aliquam nisl, eu aliquam nisl nisl eu nisl.",
+      default:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl ut aliquam luctus, nisl nisl aliquam nisl, eu aliquam nisl nisl eu nisl. Sed euismod, nisl ut aliquam luctus, nisl nisl aliquam nisl, eu aliquam nisl nisl eu nisl.",
     },
     title: {
       type: String,
@@ -36,7 +40,6 @@ export default {
         "https://cdn.shopify.com/s/files/1/0581/5490/9862/files/HM-Seasonal_Reductions-HP_BLOCK-FR-02.jpg?v=1672916516",
     },
   },
-
 };
 </script>
 
