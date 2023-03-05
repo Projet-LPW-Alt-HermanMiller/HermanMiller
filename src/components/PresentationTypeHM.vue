@@ -2,10 +2,7 @@
   <div class="presentationType-HM">
     <div class="presentationType-HM__container" :class="{ reverse: isReverse }">
       <div class="presentationType-HM__side-img">
-        <img
-          :src="image"
-          alt=""
-        />
+        <img :src="image" alt="" />
       </div>
       <div class="presentationType-HM__side-text">
         <h2 class="presentationType-HM__title" v-html="title"></h2>

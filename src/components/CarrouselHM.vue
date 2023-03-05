@@ -1,23 +1,16 @@
 <template>
   <div class="carrousel-HM">
     <div class="carrousel-HM__container">
-      <h1 class="carrousel-HM__title">
-        Aeron
-      </h1>
+      <h1 class="carrousel-HM__title">Aeron</h1>
       <h2 class="carrousel-HM__undertitle">
         Le siège ultime <span>À partir de 1599€</span>
       </h2>
       <div class="carrousel-HM__button">
-        <ButtonHM>
-          Acheter
-        </ButtonHM>
-        <ButtonHM class="-Secondary">
-          En savoir plus
-        </ButtonHM>
+        <ButtonHM> Acheter </ButtonHM>
+        <ButtonHM class="-Secondary"> En savoir plus </ButtonHM>
       </div>
     </div>
   </div>
-
 </template>
 
 <script>
@@ -25,7 +18,7 @@ import ButtonHM from "@/components/ButtonHM.vue";
 
 export default {
   name: "CarrouselHM",
-  components: {ButtonHM},
+  components: { ButtonHM },
 };
 </script>
 

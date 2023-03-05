@@ -28,6 +28,31 @@ const router = createRouter({
       name: "produit",
       component: () => import("../views/FicheProduitView.vue"),
     },
+    {
+      path: "/produits",
+      name: "produits",
+      component: () => import("../views/ProductsView.vue"),
+    },
+    {
+      path: "/achat/:product",
+      name: "ProductView",
+      component: () => import("../views/ProductView.vue"),
+    },
+    {
+      path: "/panier",
+      name: "CartView",
+      component: () => import("../views/CartView.vue"),
+    },
+    {
+      path: "/cart/order",
+      name: "cart-order",
+      component: () => import("../views/OrderView.vue"),
+    },
+    {
+      path: "/cart/order/thank-you",
+      name: "cart-order-thank-you",
+      component: () => import("../views/ConfirmationView.vue"),
+    },
   ],
 });
 
