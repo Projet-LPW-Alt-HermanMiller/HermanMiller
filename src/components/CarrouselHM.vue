@@ -1,64 +1,107 @@
 <template>
-  <div class="carrousel-HM">
-    <div class="carrousel-HM__container">
-      <h1 class="carrousel-HM__title">Aeron</h1>
-      <h2 class="carrousel-HM__undertitle">
-        Le siège ultime <span>À partir de 1599€</span>
-      </h2>
-      <div class="carrousel-HM__button">
-        <ButtonHM> Acheter </ButtonHM>
-        <ButtonHM class="-Secondary"> En savoir plus </ButtonHM>
+  <Carousel
+    :wrap-around="true"
+    :autoplay="5000"
+    :transition="500"
+  >
+    <Slide
+      class="carrousel-HM"
+      v-for="product in products"
+      :key="product.name"
+      :style="'background-image:url(' + product.acf.image_hero.url + ')'"
+    >
+      <div class="carrousel-HM__container">
+        <h1 class="carrousel-HM__title">{{ product.name }}</h1>
+        <h2 class="carrousel-HM__undertitle">
+          {{ product.acf.tag }} <span>À partir de {{ product.price }} €</span>
+        </h2>
+        <div class="carrousel-HM__button">
+          <router-link :to="`/achat/${product.slug}`">
+            <button-h-m>Acheter</button-h-m>
+          </router-link>
+          <router-link :to="`/produit/${product.slug}`">
+            <button-h-m class="-Secondary">En savoir plus</button-h-m>
+          </router-link>
+        </div>
       </div>
-    </div>
-  </div>
+    </Slide>
+  </Carousel>
 </template>
 
 <script>
 import ButtonHM from "@/components/ButtonHM.vue";
+import "vue3-carousel/dist/carousel.css";
+import { Carousel, Slide } from "vue3-carousel";
 
 export default {
   name: "CarrouselHM",
-  components: { ButtonHM },
+  components: { ButtonHM, Carousel, Slide },
+  data() {
+    return {
+      settings: {
+        arrows: false,
+        dots: true,
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        speed: 2000,
+        autoplaySpeed: 2000,
+        cssEase: "linear",
+      },
+    };
+  },
+  props: {
+    products: {
+      type: Array,
+    },
+  },
 };
 </script>
 
 <style lang="sass" scoped>
 .carrousel-HM
   width: 100%
-  height: 100vh
-  background-image: url('https://cdn.shopify.com/s/files/1/0581/5490/9862/files/HM-LEAD-Sayl-OE1-Hybrid_Home-B.jpg?v=1676547473')
+  height: 80vh
+  display: flex
+  align-items: center
+  justify-content: left
+  position: relative
   background-size: cover
   background-position-y: center
   background-position-x: 350px
   background-repeat: no-repeat
-  display: flex
-  align-items: center
-  justify-content: center
-  position: relative
+
   &__container
     width: 100%
-    max-width: 1200px
-    padding: 0 20px
+    max-width: 350px
     position: relative
     z-index: 1
+    padding: 0 20px
+
   &__title
     font-size: 45px
     font-weight: 700
     color: black
     margin-bottom: 20px
+    text-align: left
+
   &__undertitle
     font-size: 30px
     font-weight: 700
     color: black
     margin-bottom: 20px
+    text-align: left
+
     span
       font-weight: 400
       font-size: 20px
       display: block
+
   &__button
     display: flex
     flex-direction: column
-    align-items: flex-start
+    align-items: center
     justify-content: center
     @media (min-width: 768px)
       flex-direction: row

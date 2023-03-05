@@ -1,6 +1,6 @@
 <template>
   <div class="homeview">
-    <carrousel-h-m />
+    <carrousel-h-m :products="products" />
     <main class="homeview__main">
       <PresentationTypeHM />
       <PresentationTypeHM :isReverse="true" />
