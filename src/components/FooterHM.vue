@@ -59,10 +59,10 @@ export default {
           </div>
         </div>
         <div class="footer__infosPratiques">
-          <p>Mentions légales</p>
-          <p>CGU</p>
-          <p>CGV</p>
-          <p>Politique de confidentialité</p>
+          <p><router-link to="/mentions-legales">Mentions légales</router-link></p>
+          <p><router-link to="/CGU">CGU</router-link></p>
+          <p><router-link to="/CGV">CGV</router-link></p>
+          <p><router-link to="/politique-de-confidentialite">Politique de confidentialité</router-link></p>
         </div>
       </div>
     </div>
@@ -118,6 +118,11 @@ export default {
     justify-content: space-around;
     padding-top: 20px;
   }
+}
+
+a {
+  text-decoration: none;
+  color: $darkGrey;
 }
 
 .RSFooter {
