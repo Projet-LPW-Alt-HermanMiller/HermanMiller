@@ -65,11 +65,7 @@ export default {
         />
       </div>
       <div>
-        <input
-          type="checkbox"
-          id="newsletter"
-          name="newsletter"
-        />
+        <input type="checkbox" id="newsletter" name="newsletter" />
         <label for="newsletter">Je m'inscris à la newsletter</label>
       </div>
       <!-- Afficher ou masquer le mot de passe dans l'input -> à ajouter si besoin -->
@@ -87,6 +83,4 @@ export default {
   </div>
 </template>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>

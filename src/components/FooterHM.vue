@@ -1,7 +1,7 @@
 <script>
 import twitterIco from "@/assets/icons/twitterIco.vue";
 import linkedinIco from "@/assets/icons/linkedinIco.vue";
-import instagramIco from "@/assets/icons/instagramIco.vue"
+import instagramIco from "@/assets/icons/instagramIco.vue";
 import FacebookIco from "@/assets/icons/facebookIco.vue";
 export default {
   name: "FooterHm",
@@ -18,7 +18,7 @@ export default {
   <div class="footer">
     <div class="footer__parts">
       <div class="footer__left">
-        <img src="../assets/logos/hm-logo-caption.svg"/>
+        <img src="../assets/logos/hm-logo-caption.svg" />
         <div class="footer__list">
           <h5 class="footer__title">NOUS CONTACTER</h5>
           <p class="footer__info">info_france@hermanmiller.com</p>
@@ -27,10 +27,10 @@ export default {
           <p class="footer__info">Service client</p>
         </div>
         <div class="footer__RS">
-          <twitter-ico/>
-          <linkedin-ico/>
-          <instagram-ico/>
-          <facebook-ico/>
+          <twitter-ico />
+          <linkedin-ico />
+          <instagram-ico />
+          <facebook-ico />
         </div>
       </div>
 
@@ -66,10 +66,8 @@ export default {
         </div>
       </div>
     </div>
-
   </div>
 </template>
-
 
 <style lang="scss" scoped>
 .footer {

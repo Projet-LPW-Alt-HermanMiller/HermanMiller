@@ -3,11 +3,22 @@
     <h2 class="ourChairs-HM__title">{{ title }}</h2>
     <div class="ourChairs-HM__container" v-if="productData.length">
       <div class="ourChairs-HM__layout">
-        <div class="ourChairs-HM__item" v-for="product in productData" :key="product.ID">
-          <img v-if="product.images[0]" :src="product.images[0].src" alt="" class="ourChairs-HM__image"/>
+        <div
+          class="ourChairs-HM__item"
+          v-for="product in productData"
+          :key="product.ID"
+        >
+          <img
+            v-if="product.images[0]"
+            :src="product.images[0].src"
+            alt=""
+            class="ourChairs-HM__image"
+          />
           <div class="ourChairs-HM__text">
             <h3 class="ourChairs-HM__product-title">{{ product.name }}</h3>
-            <p v-if="product.acf.tag" class="ourChairs-HM__description">{{ product.acf.tag }}</p>
+            <p v-if="product.acf.tag" class="ourChairs-HM__description">
+              {{ product.acf.tag }}
+            </p>
             <router-link :to="`/produit/${product.slug}`" :key="key">
               <ButtonHM v-on:click="scrollToTop()">En savoir plus</ButtonHM>
             </router-link>
@@ -38,7 +49,7 @@ export default {
     scrollToTop() {
       window.scrollTo(0, 0);
     },
-  }
+  },
 };
 </script>
 

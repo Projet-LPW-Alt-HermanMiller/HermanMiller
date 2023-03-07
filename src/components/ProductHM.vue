@@ -1,7 +1,7 @@
 <template>
   <div class="product">
     <RouterLink :class="'product__link'" :to="`/products/${slug}`">
-      <img v-if="image" class="product__image" :src="image" alt="">
+      <img v-if="image" class="product__image" :src="image" alt="" />
       <p class="product__name">{{ name }}</p>
       <p class="product__category">Catégorie</p>
       <span class="product__price">{{ price }}€</span><br>
@@ -17,27 +17,27 @@ export default {
   components: { ButtonHM },
   props: {
     name: {
-      type: String
+      type: String,
     },
     price: {
       type: String,
     },
     slug: {
       type: String,
-      default: null
+      default: null,
     },
     images: {
       type: Array,
-      default: () => []
-    }
+      default: () => [],
+    },
   },
 
   computed: {
-    image () {
-      if (!this.images.length) return
-      return this.images[0].src
-    }
-  }
+    image() {
+      if (!this.images.length) return;
+      return this.images[0].src;
+    },
+  },
 };
 </script>
 

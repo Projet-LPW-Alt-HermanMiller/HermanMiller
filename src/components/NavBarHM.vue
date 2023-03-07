@@ -18,12 +18,14 @@ export default {
     <div class="nav__elements nav__flex">
       <div class="nav__left nav__logo">
         <router-link to="/"
-          ><img src="../assets/logos/HM_LDR.png"
-         alt=""/></router-link>
+          ><img src="../assets/logos/HM_LDR.png" alt=""
+        /></router-link>
       </div>
       <div class="nav__middle nav__flex">
         <ul class="nav__list nav__flex">
-          <li class="nav__item titleNavBar"><a href="#">Sièges</a></li>
+          <li class="nav__item titleNavBar">
+            <router-link to="/produits">Sièges</router-link>
+          </li>
           <li class="nav__item titleNavBar"><a href="#">Solutions</a></li>
           <li class="nav__item titleNavBar"><a href="#">Ressources</a></li>
         </ul>
@@ -33,7 +35,9 @@ export default {
       </div>
       <div class="nav__right nav__flex">
         <div class="nav__icon">
-          <shopping-cart-ico />
+          <router-link to="/panier">
+            <shopping-cart-ico />
+          </router-link>
         </div>
         <div class="nav__icon">
           <router-link to="/login">

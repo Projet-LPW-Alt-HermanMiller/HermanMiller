@@ -4,8 +4,11 @@
       <h2 class="showroom__title">{{ title }}</h2>
 
       <div class="showroom__images | row">
-        <div class="showroom__media | column -size-6" v-for="(image, index) in WPImages">
-          <img :src="image.url" :alt="image.alt" class="showroom__image">
+        <div
+          class="showroom__media | column -size-6"
+          v-for="(image, index) in WPImages"
+        >
+          <img :src="image.url" :alt="image.alt" class="showroom__image" />
         </div>
       </div>
     </div>
@@ -17,18 +20,18 @@ export default {
   props: {
     title: {
       type: String,
-      default: null
+      default: null,
     },
     images: {
       type: Object,
-      default: null
-    }
+      default: null,
+    },
   },
 
   computed: {
-    WPImages () {
-      if (!this.images) return
-      const images = []
+    WPImages() {
+      if (!this.images) return;
+      const images = [];
 
       // Check if left_image exists
       if (this.images.left_image) {
@@ -41,9 +44,9 @@ export default {
       }
 
       // Return image urls
-      return images
-    }
-  }
+      return images;
+    },
+  },
 };
 </script>
 
