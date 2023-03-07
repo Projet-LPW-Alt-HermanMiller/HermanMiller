@@ -3,7 +3,7 @@
     <Slide
       class="carrousel-HM"
       v-for="product in products"
-      :key="product.name"
+      :key="product.id"
       :style="'background-image:url(' + product.acf.image_hero.url + ')'"
     >
       <div class="carrousel-HM__container">

@@ -18,7 +18,9 @@
         </div>
         <div class="cart-view__total">Total du panier : {{ cartTotal }}€</div>
         <div class="cart-view__validate">
-          <ButtonHM :link="'/cart/order'">Valider le panier</ButtonHM>
+          <router-link to="/cart/order">
+            <ButtonHM>Valider le panier</ButtonHM>
+          </router-link>
         </div>
       </div>
       <div v-else>Le panier est vide</div>
