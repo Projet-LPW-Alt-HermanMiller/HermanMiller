@@ -1,9 +1,5 @@
 <template>
-  <Carousel
-    :wrap-around="true"
-    :autoplay="5000"
-    :transition="500"
-  >
+  <Carousel :wrap-around="true" :autoplay="5000" :transition="500">
     <Slide
       class="carrousel-HM"
       v-for="product in products"
@@ -25,32 +21,20 @@
         </div>
       </div>
     </Slide>
+    <template #addons>
+      <Pagination />
+    </template>
   </Carousel>
 </template>
 
 <script>
 import ButtonHM from "@/components/ButtonHM.vue";
 import "vue3-carousel/dist/carousel.css";
-import { Carousel, Slide } from "vue3-carousel";
+import { Carousel, Slide, Pagination } from "vue3-carousel";
 
 export default {
   name: "CarrouselHM",
-  components: { ButtonHM, Carousel, Slide },
-  data() {
-    return {
-      settings: {
-        arrows: false,
-        dots: true,
-        infinite: true,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        autoplay: true,
-        speed: 2000,
-        autoplaySpeed: 2000,
-        cssEase: "linear",
-      },
-    };
-  },
+  components: { ButtonHM, Carousel, Slide, Pagination },
   props: {
     products: {
       type: Array,
