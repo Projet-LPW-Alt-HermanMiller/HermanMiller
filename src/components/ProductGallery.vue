@@ -59,7 +59,14 @@ export default {
 </script>
 
 <style lang="scss">
+.carousel {
+  width: 100%;
+}
 .product-gallery {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   &__list {
     display: flex;
     flex-flow: row wrap;
@@ -67,8 +74,8 @@ export default {
   }
 
   &__image {
-    width: 80px;
-    height: auto;
+    max-width: 180px;
+    height: 100px;
     background-size: cover;
     background-position: center;
 
