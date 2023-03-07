@@ -1,65 +1,62 @@
 <template>
   <div class="product-view">
-    <div class="container">
-      <div class="row">
-        <div class="product-view__gallery | column -size-6">
-          <ProductGallery :images="displayedProduct.images" />
+    <div class="product-view__container">
+      <div class="product-view__gallery">
+        <ProductGallery :images="displayedProduct.images" />
+      </div>
+      <div class="product-view__content">
+        <h1 class="product-view__name">{{ displayedProduct.name }}</h1>
+        <span class="product-view__sku">{{ displayedProduct.sku }}</span>
+        <p class="product-view__price">{{ displayedProduct.price }}€</p>
+        <div v-if="colorAttribute" class="product-view__attribute">
+          <div
+            v-for="(option, index) in colorAttribute.options"
+            class="product-view__option"
+            @click="changeColor(option)"
+          >
+            {{ option }}
+          </div>
         </div>
-        <div class="product-view__content | column -size-6">
-          <h1 class="product-view__name">{{ displayedProduct.name }}</h1>
-          <span class="product-view__sku">{{ displayedProduct.sku }}</span>
-          <p class="product-view__price">{{ displayedProduct.price }}€</p>
-          <div v-if="colorAttribute" class="product-view__attribute">
-            <div
-              v-for="(option, index) in colorAttribute.options"
-              class="product-view__option"
-              @click="changeColor(option)"
-            >
-              {{ option }}
-            </div>
+        <div class="product-view__description">
+          <div
+            v-if="displayedProduct.dimensions"
+            class="product-view__dimensions"
+          >
+            <p class="product-view__subtitle">Dimensions du produit :</p>
+            <ul>
+              <li class="product-view__dimensions-item">
+                Longueur : {{ displayedProduct.dimensions.length }}cm
+              </li>
+              <li class="product-view__dimensions-item">
+                Largeur : {{ displayedProduct.dimensions.width }}cm
+              </li>
+              <li class="product-view__dimensions-item">
+                Hauteur : {{ displayedProduct.dimensions.height }}cm
+              </li>
+            </ul>
           </div>
-          <div class="product-view__description">
-            <div
-              v-if="displayedProduct.dimensions"
-              class="product-view__dimensions"
-            >
-              <p class="product-view__subtitle">Dimensions du produit :</p>
-              <ul>
-                <li class="product-view__dimensions-item">
-                  Longueur : {{ displayedProduct.dimensions.length }}cm
-                </li>
-                <li class="product-view__dimensions-item">
-                  Largeur : {{ displayedProduct.dimensions.width }}cm
-                </li>
-                <li class="product-view__dimensions-item">
-                  Hauteur : {{ displayedProduct.dimensions.height }}cm
-                </li>
-              </ul>
-            </div>
-            <p class="product-view__subtitle">Description du produit :</p>
-            <div
-              class="product-view__description-content"
-              v-html="displayedProduct.short_description"
-            />
+          <div
+            class="product-view__description-content"
+            v-html="displayedProduct.short_description"
+          />
+        </div>
+        <div class="product-view__actions">
+          <div class="product-view__add-to-cart" @click="addToCart">
+            <ButtonHM>Ajouter au panier</ButtonHM>
           </div>
-          <div class="product-view__actions">
-            <div class="product-view__add-to-cart" @click="addToCart">
-              <ButtonHM>Ajouter au panier</ButtonHM>
+          <div class="product-view__quantity">
+            <div
+              class="product-view__quantity-button"
+              @click="updateQuantity('decrease')"
+            >
+              -
             </div>
-            <div class="product-view__quantity">
-              <div
-                class="product-view__quantity-button"
-                @click="updateQuantity('decrease')"
-              >
-                -
-              </div>
-              <div class="product-view__quantity-value">{{ quantity }}</div>
-              <div
-                class="product-view__quantity-button"
-                @click="updateQuantity('increase')"
-              >
-                +
-              </div>
+            <div class="product-view__quantity-value">{{ quantity }}</div>
+            <div
+              class="product-view__quantity-button"
+              @click="updateQuantity('increase')"
+            >
+              +
             </div>
           </div>
         </div>
@@ -153,68 +150,26 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .product-view {
+  margin: 0 100px;
+  &__container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__gallery {
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 2rem;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  }
   &__content {
-    padding-top: 50px;
-    padding-bottom: 50px;
-  }
-
-  &__name {
-    margin: 0;
-  }
-
-  &__sku {
-    display: inline-block;
-    margin: 5px 0 0 0;
-  }
-
-  &__price {
-    font-size: 25px;
-    font-weight: 700;
-    color: $secondary-color;
-  }
-
-  &__subtitle {
-    font-size: 20px;
-    font-weight: 700;
-    color: $secondary-color;
-  }
-
-  &__actions {
-    display: flex;
-    flex-flow: row wrap;
-    align-items: center;
-  }
-
-  &__quantity {
-    display: flex;
-    flex-flow: row wrap;
-    align-items: center;
-  }
-
-  &__quantity-button {
-    padding: 5px 10px;
-    background-color: black;
-    color: white;
-    line-height: 1;
-    font-size: 22px;
-    font-weight: 700;
-    border: 1px solid black;
-    cursor: pointer;
-
-    &:hover {
-      background-color: white;
-      color: black;
-    }
-  }
-
-  &__quantity-value {
-    line-height: 1.2;
-    font-size: 18px;
-    padding: 5px 20px;
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
   }
 }
 </style>
