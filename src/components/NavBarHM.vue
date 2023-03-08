@@ -58,7 +58,7 @@ export default {
             ><img src="../assets/logos/HM_LDR.png" alt=""
           /></router-link>
         </div>
-        <div class="mobile__icon" v-on:click="toggleMenu()">
+        <div class="mobile__search" v-on:click="toggleMenu()">
           <search-ico  />
         </div>
       </div>
@@ -109,22 +109,17 @@ a {
     display: block;
     position: fixed;
     z-index: 100;
-    padding: -30px;
-    margin-top: -10px;
-    margin-left: -10px;
     &__navbar {
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
-      height: 50px;
+      height: 70px;
       width: 100vw;
-      padding-right: 30px;
-      padding-top: 30px;
-      padding-bottom: 32px;
+      padding-bottom: 10px;
       background-color: white;
     }
     &__logo {
-      justify-content: center;
+      margin-right: auto;
       img {
         max-width: 50px;
         display: inline-block;
@@ -134,6 +129,11 @@ a {
       display: flex;
       justify-content: space-evenly;
       align-items: center;
+    }
+    &__search {
+      margin-left: auto;
+      padding: 10px;
+      cursor: pointer;
     }
     &__list {
       margin: 0;
@@ -157,6 +157,9 @@ a {
   padding: 10px;
   margin: 0;
   background: $white;
+  @media (max-width: 768px) {
+    padding: 0;
+  }
 
   &__flex {
     display: flex;

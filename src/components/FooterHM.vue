@@ -76,6 +76,9 @@ export default {
 
   &__parts {
     display: flex;
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
   }
 
   &__left {
@@ -85,6 +88,9 @@ export default {
     flex-direction: column;
     align-items: center;
     padding: 10px 0 20px 0;
+    @media (max-width: 768px) {
+      width: 100vw;
+    }
   }
 
   &__right {
@@ -94,12 +100,18 @@ export default {
     flex-direction: column;
     justify-content: space-around;
     padding: 40px 0 20px 0;
+    @media (max-width: 768px) {
+      width: 100%;
+    }
   }
 
   &__menu {
     background-color: $backgroundFooterDark;
     display: flex;
     justify-content: space-around;
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
   }
 
   &__infosPratiques {

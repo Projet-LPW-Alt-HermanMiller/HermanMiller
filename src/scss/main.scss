@@ -2,13 +2,14 @@
 
 * {
   box-sizing: border-box;
+  margin : 0;
+  padding : 0;
 }
 
 body {
-  margin : 0;
-  padding : 0;
   font-family: $text-font-family;
   font-size: $base-font-size;
+
 }
 
 h1 {
