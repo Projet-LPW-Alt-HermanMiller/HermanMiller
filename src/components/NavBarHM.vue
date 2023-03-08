@@ -145,8 +145,10 @@ a {
     }
     &__nav-menu {
       transform: translateX(100vw);
+      width: 100vw;
       background-color: white;
       transition: all ease-in-out 0.5s;
+      position: absolute;
     }
     .open {
       transform: translateX(0);

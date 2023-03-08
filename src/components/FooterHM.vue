@@ -119,9 +119,15 @@ export default {
     width: 70%;
     margin: auto;
     display: flex;
+    flex-flow: row wrap;
     justify-content: space-around;
     font-size: $small-font-size;
     font-weight: 200;
+    @media (max-width: 768px) {
+      p {
+        padding: 10px;
+      }
+    }
   }
 
   &__RS {
@@ -130,7 +136,28 @@ export default {
     justify-content: space-around;
     padding-top: 20px;
   }
+  &__info {
+    font-size: $small-font-size;
+    font-weight: 400;
+    padding: 5px 0;
+  }
+  &__title {
+    font-size: $base-font-size;
+    font-weight: 600;
+    padding: 5px 0;
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+  &__list {
+    margin-bottom: 30px;
+    @media (max-width: 768px) {
+      p, h5 {
+        text-align: center;
+      }
+    }
+  }
 }
+
 
 a {
   text-decoration: none;
