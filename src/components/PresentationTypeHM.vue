@@ -55,6 +55,9 @@ export default {
 .presentationType-HM {
   width: 100%;
   margin: 100px 0 0 0;
+  @media (max-width: 768px) {
+    margin: 30px 0 0 0
+  }
 
   &__container {
     width: 100%;
@@ -100,6 +103,7 @@ export default {
     max-width: 60%;
     @media (max-width: 768px) {
       max-width: 100%;
+      margin-top: 30px;
     }
   }
 
@@ -108,6 +112,9 @@ export default {
     font-weight: 700;
     color: black;
     margin-bottom: 20px;
+    @media (max-width: 768px) {
+      font-size: 28px;
+    }
   }
 }
 </style>

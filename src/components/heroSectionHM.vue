@@ -73,6 +73,11 @@ export default {
     flex-flow: row;
     justify-content: space-between;
     align-items: center;
+    @media (max-width: 768px) {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
   }
   &__image {
     width: max-content;
@@ -81,6 +86,10 @@ export default {
       height: 100vh;
       max-height: 620px;
       object-fit: cover;
+      @media (max-width: 768px) {
+        width: 100%;
+        height: 100%;
+      }
     }
   }
   &__product-overview {
@@ -91,6 +100,11 @@ export default {
     width: 50vw;
     height: 100vh;
     max-height: 620px;
+    @media (max-width: 768px) {
+      width: 100%;
+      height: 100%;
+      margin-top: 30px;
+    }
   }
   &__product-overview__texts {
     width: 300px;
@@ -102,6 +116,9 @@ export default {
       color: black;
       text-align: left;
       margin-bottom: 0;
+      @media (max-width: 768px) {
+        font-size: 36px;
+      }
     }
   }
   &__product-overview__description {

@@ -61,6 +61,11 @@ export default {
     color: black;
     text-align: left;
     margin-bottom: 50px;
+    @media (max-width: 768px) {
+      font-size: 30px;
+      margin-bottom: 20px;
+      margin-top: 30px;
+    }
   }
 
   &__container {

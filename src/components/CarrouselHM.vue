@@ -81,7 +81,7 @@ export default {
     margin-bottom: 20px
     text-align: left
     @media (max-width: 768px)
-      font-size: 60px
+      font-size: 30px
 
   &__undertitle
     font-size: 30px
