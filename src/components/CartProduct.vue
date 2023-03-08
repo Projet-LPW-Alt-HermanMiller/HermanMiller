@@ -3,11 +3,11 @@
     <img v-if="image" class="cart-product__image" :src="image" alt="" />
     <p class="cart-product__name">{{ name }}</p>
     <span class="cart-product__quantity">
-      <button class="cart-product__button" @click="onDecreaseQuantity">
+      <button class="cart-product__quantity-button" @click="onDecreaseQuantity">
         -
       </button>
       Quantité : {{ quantity }}
-      <button class="cart-product__button" @click="onIncreaseQuantity">
+      <button class="cart-product__quantity-button" @click="onIncreaseQuantity">
         +
       </button>
     </span>
@@ -81,10 +81,17 @@ export default {
 </script>
 
 <style lang="scss">
+span {
+  display: inline-block;
+  margin: 10px 0;
+}
 .cart-product {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
+  @media (max-width: 768px) {
+    flex-flow: column wrap;
+  }
 
   &.-is-layout-cart {
     align-items: center;
@@ -103,13 +110,28 @@ export default {
     font-size: 20px;
     font-weight: 700;
   }
-
-  &__button {
+  &__quantity {
+    display: flex;
+    align-items: center;
     .-is-layout-order & {
       display: none;
     }
   }
 
+  &__quantity-button {
+    width: 34px;
+    height: 34px;
+    border-radius: 2px;
+    color: white;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    .-is-layout-order & {
+      display: none;
+    }
+  }
   &__price {
     display: inline-block;
     font-size: 18px;
