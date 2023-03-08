@@ -30,6 +30,9 @@ export default {
   text-decoration: none;
   cursor: pointer;
   border: 1px solid $HMColor;
+  @media (max-width: 768px) {
+    font-size: 0.8rem;
+  }
 
   &:hover {
     color: $HMColor;
