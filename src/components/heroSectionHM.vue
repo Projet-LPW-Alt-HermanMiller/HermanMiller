@@ -87,7 +87,7 @@ export default {
       max-height: 620px;
       object-fit: cover;
       @media (max-width: 768px) {
-        width: 100%;
+        width: 100vw;
         height: 100%;
       }
     }
