@@ -73,6 +73,7 @@ export default {
   &__name {
     font-size: 18px;
     font-weight: 700;
+    margin-top: 30px;
     color: black;
     text-align: center;
   }

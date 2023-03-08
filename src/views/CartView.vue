@@ -48,8 +48,32 @@ export default {
 </script>
 
 <style lang="scss">
+.container {
+  display: flex;
+  flex-direction: column;
+  @media (max-width: 768px) {
+    align-items: center;
+    justify-content: center;
+  }
+}
 .cart-view {
+  display: flex;
+  flex-direction: column;
+  margin: 0 100px;
+  min-height: 100vh;
+  @media (max-width: 768px) {
+    margin: 0 20px;
+    padding-top: 70px;
+  }
+  &__validate {
+    display: flex;
+    @media (max-width: 768px) {
+      justify-content: center;
+      margin-top: 30px;
+    }
+  }
   &__list {
+    margin: auto 0;
   }
 
   &__item {
@@ -63,6 +87,7 @@ export default {
     font-weight: 700;
     margin: 30px 0 0 auto;
     text-align: right;
+
   }
 }
 </style>
