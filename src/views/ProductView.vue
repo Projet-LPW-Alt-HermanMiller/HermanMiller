@@ -78,9 +78,7 @@
 
 <script>
 import { client } from "@/utils/axios";
-
 import ProductGallery from "@/components/ProductGallery.vue";
-
 import ButtonHM from "@/components/ButtonHM.vue";
 import ProductGalleryHM from "@/components/productGalleryHM.vue";
 import OurChairs from "@/components/OurChairsHM.vue";
