@@ -1,5 +1,5 @@
 <template>
-  <a class="RSFooter Facebook" href="">
+  <a class="RSFooter Facebook" href="https://www.facebook.com/HermanMiller/">
     <svg
       class="feather feather-facebook"
       fill="none"
