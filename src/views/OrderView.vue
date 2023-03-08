@@ -1,7 +1,7 @@
 <template>
   <div class="order-view">
     <div class="container">
-      <h1>Valider ma commande</h1>
+      <h1 class="order-view__title">Valider ma commande</h1>
       <div class="row">
         <div class="column -size-8">
           <form action="" class="order-view__form" @submit="onSubmit">
@@ -514,11 +514,38 @@ export default {
 </script>
 
 <style lang="scss">
+h2 {
+  margin-top: 30px;
+  font-size: 24px;
+  font-weight: 500;
+}
 .order-view {
+  margin: 0 100px;
+  @media (max-width: 768px) {
+    margin: 0 20px;
+  }
+  &__title {
+    padding-top: 80px;
+    font-weight: 500;
+  }
+  &__list {
+    display: flex;
+    flex-flow: row wrap;
+    margin-top: 30px;
+  }
+  &__item {
+    margin: 0 10px;
+  }
   &__row {
     margin-top: 30px;
   }
-
+  &__form {
+    display: flex;
+    flex-flow: column wrap;
+    margin-top: 30px;
+    padding: 20px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  }
   &__field {
     display: flex;
     flex-flow: column wrap;
