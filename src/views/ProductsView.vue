@@ -3,7 +3,7 @@
     <div class="container">
       <div class="row">
         <div class="column -size-3">
-          <p class="products-view__filter-title">Filtre par pièce</p>
+          <p class="products-view__filter-title">Filtre</p>
           <div class="products-view__checkbox">
             <input
               v-model="filters"
@@ -36,36 +36,10 @@
               >Salon/Séjour</label
             >
           </div>
-          <p class="products-view__filter-title">Filtre par prix</p>
-          <input v-model="price" type="range" min="0" max="2000" />
-          <br />
-          {{ price }}
         </div>
-        <div class="column -size-9">
-          <h1 class="products-view__title">Mes produits</h1>
+        <div>
           <div class="products-view__list">
-            <div
-              class="products-view__item"
-              v-for="(product, index) in displayedProducts"
-              :key="index"
-            >
-              <Product
-                :name="product.name"
-                :slug="product.slug"
-                :price="product.price"
-                :images="product.images"
-              />
-            </div>
-          </div>
-          <div class="products-view__pagination">
-            <span
-              class="products-view__pagination-button"
-              @click="onPreviousClick"
-              >Page précédente</span
-            >
-            <span class="products-view__pagination-button" @click="onNextClick"
-              >Page suivante</span
-            >
+            <OurChairs :product-data="filteredProducts" :title="'Nos produits'"/>
           </div>
         </div>
       </div>
@@ -76,9 +50,10 @@
 <script>
 import { client } from "@/utils/axios";
 import Product from "@/components/Product.vue";
+import OurChairs from "@/components/OurChairsHM.vue";
 
 export default {
-  components: { Product },
+  components: {OurChairs, Product },
   data() {
     return {
       products: [],
@@ -118,13 +93,6 @@ export default {
 
     // Sliced array of products based on filteredProducts
     // Handles pagination
-    displayedProducts() {
-      const nextPage = this.page + 1;
-      return this.filteredProducts.slice(
-        this.page * this.byPage,
-        nextPage * this.byPage
-      );
-    },
   },
 
   async mounted() {
@@ -134,23 +102,7 @@ export default {
   },
 
   methods: {
-    // Go to previous page if not first one
-    onPreviousClick() {
-      if (this.page === 0) return;
-      this.page = this.page - 1;
-    },
-
-    // Go to next page if not last one
-    onNextClick() {
-      const pageCount = Math.ceil(this.filteredProducts.length / this.byPage);
-      if (this.page >= pageCount - 1) return;
-      this.page = this.page + 1;
-    },
-
     // Triggered when this.filteredProducts value changes
-    onFilteredProductsChange() {
-      this.page = 0;
-    },
   },
 };
 </script>
@@ -158,33 +110,17 @@ export default {
 <style lang="scss">
 @import "../src/scss/foundations/variables.scss";
 .products-view {
-  &__label {
-    font-size: 16px;
-    font-weight: 500;
+  margin-right: 100px;
+  margin-left: 100px;
+  @media (max-width: 768px) {
+    margin-right: 20px;
+    margin-left: 20px;
   }
-
   &__filter-title {
-    font-size: 20px;
+    font-size: 1.5rem;
     font-weight: 700;
-  }
-
-  &__pagination {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-    padding: 50px 0;
-  }
-
-  &__pagination-button {
-    display: inline-block;
-    font-size: 14px;
-    font-weight: 700;
-    cursor: pointer;
-  }
-  &__list {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
+    margin-bottom: 1rem;
   }
 }
+
 </style>
