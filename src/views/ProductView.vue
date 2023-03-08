@@ -7,7 +7,7 @@
       <div class="product-view__content">
         <h1 class="product-view__name">{{ displayedProduct.name }}</h1>
         <p class="product-view__price">{{ displayedProduct.price }}€ TTC</p>
-        <h2>Choix de la couleur</h2>
+        <h2 class="product-view__subtitle">Choix de la couleur</h2>
         <div v-if="colorAttribute" class="product-view__attribute">
           <div
             v-for="(option, index) in colorAttribute.options"
@@ -43,8 +43,10 @@
           />
         </div>
         <div class="product-view__actions">
-          <div class="product-view__add-to-cart" @click="addToCart">
-            <ButtonHM>Ajouter au panier</ButtonHM>
+          <div class="product-view__add-to-cart">
+            <router-link to="/panier">
+              <ButtonHM @click="addToCart">Ajouter au panier</ButtonHM>
+            </router-link>
           </div>
           <div class="product-view__quantity">
             <div
@@ -173,47 +175,92 @@ export default {
 <style lang="scss" scoped>
 .product-view {
   margin: 0 100px;
+  @media (max-width: 768px) {
+    margin: 0 20px;
+  }
+
   &__container {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
     align-items: center;
+    @media (max-width: 768px) {
+      flex-flow: column wrap;
+    }
   }
+
   &__attribute {
     display: flex;
   }
+
   &__dimensions > ul {
     margin-left: 0;
     padding-left: 0;
   }
+
   &__dimensions-items {
     list-style: none;
     margin-left: 0;
   }
+
   &__gallery {
     width: 50%;
     margin-bottom: 2rem;
+    @media (max-width: 768px) {
+      width: 100%;
+    }
   }
+
   &__content {
     width: 50%;
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
     padding: 2rem;
+    @media (max-width: 768px) {
+      width: 100%;
+    }
   }
+
   &__name {
     margin: 0;
     font-size: 3rem;
+    @media (max-width: 768px) {
+      font-size: 2rem;
+    }
   }
+
   &__price {
     margin-top: 0;
     font: $secondary-title-font-family;
     font-size: 1.5rem;
+    @media (max-width: 768px) {
+      font-size: 1rem;
+    }
   }
+
   &__actions {
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: row;
     justify-content: start;
     align-items: center;
+    margin: 20px 0 0 0;
   }
+
+  &__subtitle {
+    margin: 20px 0 0 0;
+    font-size: 1.5rem;
+    @media (max-width: 768px) {
+      font-size: 1rem;
+    }
+  }
+
+  &__description-content {
+    margin: 20px 0 0 0;
+    font-size: 1.5rem;
+    @media (max-width: 768px) {
+      font-size: 1rem;
+    }
+  }
+
   &__quantity {
     display: flex;
     flex-direction: row;
@@ -222,10 +269,12 @@ export default {
     border: inset 1px #000000;
     border-radius: 2px;
   }
+
   &__quantity-value {
     margin-left: auto;
     margin-right: auto;
   }
+
   &__quantity-button {
     width: 34px;
     height: 34px;

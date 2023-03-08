@@ -96,6 +96,11 @@ export default {
     height: 500px;
     background-size: cover;
     background-position: center;
+    @media (max-width: 768px) {
+      width: 300px;
+      height: 300px;
+      margin-top: 100px;
+    }
   }
 }
 </style>
