@@ -80,6 +80,10 @@ export default {
   &__content {
     margin-right: 100px;
     margin-left: 100px;
+    @media (max-width: 768px) {
+      margin-right: 20px;
+      margin-left: 20px;
+    }
   }
   &__loading {
     font-size: 45px;
