@@ -55,6 +55,12 @@ export default {
   background-position-y: center
   background-position-x: 350px
   background-repeat: no-repeat
+  @media (max-width: 768px)
+    background-position-x: -100px
+    background-position-y: -300px
+    flex-direction: column
+    width: 100vw
+    height: 100vh
 
   &__container
     width: 100%
@@ -62,6 +68,11 @@ export default {
     position: relative
     z-index: 1
     padding: 0 20px
+    @media (max-width: 768px)
+      max-width: 500px
+      padding: 0 20px
+      background-color: white
+      margin-top: auto
 
   &__title
     font-size: 45px
@@ -69,6 +80,8 @@ export default {
     color: black
     margin-bottom: 20px
     text-align: left
+    @media (max-width: 768px)
+      font-size: 60px
 
   &__undertitle
     font-size: 30px
@@ -76,18 +89,22 @@ export default {
     color: black
     margin-bottom: 20px
     text-align: left
+    @media (max-width: 768px)
+      font-size: 20px
 
     span
       font-weight: 400
       font-size: 20px
       display: block
+      @media (max-width: 768px)
+        font-size: 16px
 
   &__button
     display: flex
     flex-direction: column
-    align-items: center
+    align-items: start
     justify-content: center
-    @media (min-width: 768px)
+    @media (max-width: 768px)
       flex-direction: row
       align-items: center
       justify-content: flex-start

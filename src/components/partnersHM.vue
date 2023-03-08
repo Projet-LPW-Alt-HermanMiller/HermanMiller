@@ -59,7 +59,7 @@ export default {
   }
   &__layout {
     display: flex;
-    flex-direction: row;
+    flex-flow: row wrap;
     align-items: center;
     justify-content: space-between;
     width: 100%;

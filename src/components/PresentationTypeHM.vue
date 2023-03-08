@@ -47,6 +47,9 @@ export default {
 <style lang="scss" scoped>
 .reverse {
   flex-direction: row-reverse !important;
+  @media (max-width: 768px) {
+    flex-direction: column !important;
+  }
 }
 
 .presentationType-HM {
@@ -59,11 +62,18 @@ export default {
     z-index: 1;
     display: flex;
     justify-content: space-between;
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
   }
 
   &__side-img {
     width: 50%;
     height: 50%;
+    @media (max-width: 768px) {
+      width: 100%;
+      height: 100%;
+    }
 
     img {
       max-width: 100%;
@@ -75,6 +85,10 @@ export default {
   &__side-text {
     width: 40%;
     height: 100%;
+    @media (max-width: 768px) {
+      width: 100%;
+      height: 100%;
+    }
   }
 
   &__text {
@@ -84,6 +98,9 @@ export default {
     margin-bottom: 20px;
     margin-top: 50px;
     max-width: 60%;
+    @media (max-width: 768px) {
+      max-width: 100%;
+    }
   }
 
   &__title {

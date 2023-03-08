@@ -86,6 +86,10 @@ export default {
   &__section {
     padding-left: 100px;
     padding-right: 100px;
+    @media (max-width: 768px) {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
   }
   &__section {
     background-color: #f5f5f5;

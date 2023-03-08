@@ -44,6 +44,9 @@ export default {
     color: black;
     text-align: center;
     margin-bottom: 50px;
+    @media (max-width: 768px) {
+      font-size: 30px;
+    }
 
     h2 {
       span {
