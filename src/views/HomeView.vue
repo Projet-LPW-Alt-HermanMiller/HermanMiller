@@ -2,8 +2,17 @@
   <div class="homeview">
     <carrousel-h-m :products="products" />
     <main class="homeview__main">
-      <PresentationTypeHM />
-      <PresentationTypeHM :isReverse="true" />
+      <PresentationTypeHM
+        :image="products[3].acf.section_1.image.url"
+        :title="products[3].acf.section_1.title"
+        :text="products[3].acf.section_1.text"
+      />
+      <PresentationTypeHM
+        :image="products[0].acf.section_2.image.url"
+        :title="products[0].acf.section_2.title"
+        :text="products[0].acf.section_2.text"
+        :isReverse="true"
+      />
       <OurChairs :product-data="products" />
     </main>
     <section class="homeview__section">

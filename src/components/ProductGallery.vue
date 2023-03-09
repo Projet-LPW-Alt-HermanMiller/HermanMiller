@@ -2,35 +2,27 @@
   <div v-if="active" class="product-gallery">
     <!-- Image active -->
     <div
-      class="product-gallery__main-image"
+      class="product-gallery__image"
       :style="`background-image: url('${active.src}')`"
     />
     <!-- Liste d'images -->
-    <Carousel :itemsToShow="5" :itemsToScroll="5" :transition="500">
-      <Slide
-        v-for="(image, index) in images"
-        :key="image.id"
-        @click="onImageClick(image)"
-      >
-        <img
-          :src="image.src"
-          alt=""
+    <div class="product-gallery__list">
+      <div v-for="(image, index) in images" class="product-gallery__item">
+        <div
           :class="[
             'product-gallery__image',
             { '-is-active': active.id === image.id },
           ]"
+          :style="`background-image: url('${image.src}')`"
+          @click="onImageClick(image)"
         />
-      </Slide>
-    </Carousel>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import "vue3-carousel/dist/carousel.css";
-import { Carousel, Slide } from "vue3-carousel";
-
 export default {
-  components: { Carousel, Slide },
   props: {
     images: {
       type: Array,
@@ -59,14 +51,7 @@ export default {
 </script>
 
 <style lang="scss">
-.carousel {
-  width: 100%;
-}
 .product-gallery {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   &__list {
     display: flex;
     flex-flow: row wrap;
@@ -74,33 +59,25 @@ export default {
   }
 
   &__image {
-    max-width: 180px;
-    height: 100px;
+    aspect-ratio: 1;
     background-size: cover;
     background-position: center;
+    border: 1px solid black;
+    border-radius: 10px;
+    overflow: hidden;
 
     &.-is-active {
       opacity: 0.5;
     }
   }
-
   &__item {
     margin-right: 10px;
     margin-bottom: 10px;
-    width: 80px;
-    height: 80px;
+    width: 200px;
   }
-
-  &__main-image {
-    width: 500px;
-    height: 500px;
-    background-size: cover;
-    background-position: center;
-    @media (max-width: 768px) {
-      width: 300px;
-      height: 300px;
-      margin-top: 100px;
-    }
+  &__image {
+    width: 100%;
+    height: 100%;
   }
 }
 </style>

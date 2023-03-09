@@ -29,7 +29,7 @@
     </div>
   </div>
   <div v-else>
-    <h1 class="ficheProduit-view__loading">Chargement...</h1>
+    <loader/>
   </div>
 </template>
 
@@ -39,9 +39,11 @@ import OurChairs from "@/components/OurChairsHM.vue";
 import { client } from "@/utils/axios";
 import PresentationTypeHM from "@/components/PresentationTypeHM.vue";
 import ProductGalleryHM from "@/components/productGalleryHM.vue";
+import Loader from "@/components/Loader.vue";
 export default {
   name: "FicheProduitView",
   components: {
+    Loader,
     ProductGalleryHM,
     PresentationTypeHM,
     OurChairs,
